@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Object Literal & JSON Object</title>
+</head>
+
+<body>
+    <script type="text/Javascript">
+        //js object
+        const employee = {
+            firstname : "Maung",
+            lastname : 'Zaw',
+            "age" : 20,
+            "tax" : true,
+            getname : function(){
+                return `I am ${this.firstname + this.lastname}`;
+            }
+        }
+
+        console.log(employee);
+        console.log(employee.firstname);
+        console.log(employee.getname());
+
+        //json object
+        let student = {
+            "firstname" : "Kyaw",
+            "lastname" : "Zayar",
+            "age" : 15,
+            "tax" : false,
+            "passport" : null,
+            "remark" : "Lorem Ipsum is simply \"dummy text\" of the printing and typesetting industry.",
+            "holiday" : ["Satruday","Sunday"],
+            "quality" : [
+                {
+                    "subject" : "myanmar","mark" : 60
+                },
+                {
+                    "subject" : "english","mark" : 70
+                },
+                {
+                    "subject" : "math","mark" : 90
+                },
+            ],
+
+        }
+
+        console.log(student);
+        console.log(student.firstname);
+        console.log(student.quality);
+        console.log(student.passport);
+  </script>
+</body>
+
+</html>

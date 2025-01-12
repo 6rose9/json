@@ -1,0 +1,26 @@
+{
+    "firstname": "Kyaw",
+    "lastname": "Zayar",
+    "age": 15,
+    "tax": false,
+    "passport": null,
+    "remark": "Lorem Ipsum is simply \"dummy text\" of the printing and typesetting industry.",
+    "holiday": [
+        "Satruday",
+        "Sunday"
+    ],
+    "quality": [
+        {
+            "subject": "myanmar",
+            "mark": 60
+        },
+        {
+            "subject": "english",
+            "mark": 70
+        },
+        {
+            "subject": "math",
+            "mark": 90
+        }
+    ]
+}

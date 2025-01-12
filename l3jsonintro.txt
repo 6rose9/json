@@ -1,0 +1,33 @@
+=> JSON(JavaScript Object Notation)
+
+lightweigh
+
+doesn't support comments and namespaces
+
+nosql database like mongo database use JSON
+
+need to enclose name of key within double quotes (should not use single code)
+But use single code in key name
+
+
+=>JSON & XML
+
+JSON is lightweigh, consise , easy to understand
+XML is more text and complex
+
+
+=>JSON Syntax Rules
+JSON data to written inside curly braces {}
+Data is represented as key value pairs
+Keys and values should be enclosed in double quotes
+Key and value should be separated by colon (:)
+Comma(,) is used to separated data
+
+Data types of JSON
+---------------------
+string
+number
+boolean
+null
+array
+object
