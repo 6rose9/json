@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User API</title>
+</head>
+
+<body>
+    <div>
+        => xmlhttp.onreadystatechange
+
+        xmlhttp.readyState === 4
+
+        0 = UNSENT open() has not been called yet
+        1 = OPENED send() has been called
+        2 = HEADER_RECEIVED send() has been called and headers and status are available
+        3 = LOADING downloading, responseText hold partial datas
+        4 = DONE the operation is completed.
+
+    </div>
+
+    <script>
+        //-------------------------------------asynchronous
+        //need to handel respone by onreadystatechagne like flag 
+
+        let uri = "https://randomuser.me/api";
+
+        const xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.open("GET", uri, true); 
+
+        xmlhttp.send();
+
+        console.log(xmlhttp.response);
+
+        xmlhttp.onreadystatechange = function () {
+            // console.log("State Changed = ", xmlhttp.readyState,xmlhttp.status);
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                let result = xmlhttp.responseText;
+                result = JSON.parse(result);
+                console.log(result.results[0].name);
+
+            }
+        }
+
+        // xmlhttp.open("GET", uri, true); //asynchronous
+
+        // xmlhttp.send();
+
+        // console.log(xmlhttp.response);
+
+    </script>
+</body>
+
+</html>

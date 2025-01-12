@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User API</title>
+</head>
+<body>
+    <script>
+        let uri = "https://randomuser.me/api";
+
+        const xmlrequest = new XMLHttpRequest();
+        xmlrequest.open("GET",uri,false); // synchronize
+        xmlrequest.send();
+
+        // console.log(xmlrequest);
+        let result;
+        if(xmlrequest.readyState === 4 && xmlrequest.status === 200){
+            result = xmlrequest.responseText;
+        }
+
+        result = JSON.parse(result);
+        
+        console.log(result.results[0].name);
+
+
+    </script>
+</body>
+</html>
