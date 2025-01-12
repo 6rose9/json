@@ -1,0 +1,37 @@
+=> Namespace
+
+=>Exercise (Before Namespace)
+
+<?xml version="1.0"?>
+<Root>
+    <product>
+        <title>Vehicle</title>
+        <type>EV Car </type>
+    </product>
+     <product>
+        <title>T-shirt</title>
+        <type>Red </type>
+    </product>
+     <product>
+        <title>Fruit</title>
+        <type>Orange</type>
+    </product>
+</Root>
+
+=>Exercise (Afer Namespace)
+
+<?xml version="1.0"?>
+<Root>
+    <v:product>
+        <v:title>Vehicle</v:title>
+        <v:type>EV Car </v:type>
+    </v:product>
+     <a:product>
+        <a:title>T-shirt</a:title>
+        <a:type>Red </a:type>
+    </a:product>
+     <f:product>
+        <f:title>Fruit</f:title>
+        <f:type>Orange</f:type>
+    </f:product>
+</Root>
