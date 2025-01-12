@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP request by AJAX</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        //AJAX (Asychronous JavaScript and XML)
+        let xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.open("GET", "l10sampledata.json", false);
+        xmlhttp.send();
+
+        // console.log(xmlhttp);
+        let result;
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            // const result = xmlhttp;
+            // console.log(result);
+
+            // result = xmlhttp.responseText;
+            result = xmlhttp.response;
+            console.log(typeof result);
+        }
+        console.log(result);
+
+        console.log(typeof JSON.parse(result));
+
+    </script>
+</body>
+
+</html>
