@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Json from dummy</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <button id="btn">Click Me</button>
+    <script>
+        const container = document.getElementById("container");
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener('click', () => {
+            const uri = `https://dummyjson.com/products`;
+            fetch(uri)
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data.products);
+                    products = data.products;
+                    products.forEach(product => {
+                        console.log(product);
+                    });
+                })
+                .catch(err => console.error(err));
+
+        });
+    </script>
+</body>
+
+</html>
