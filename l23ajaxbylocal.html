@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - Local </title>
+</head>
+
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+    <script type="text/javascript">
+        //-------------------------------------- ajax (jquery)
+        /*
+        * $.ajax({
+        *   method : '',
+        *   url : url,
+        *   dataType : 'json' //text
+        *   }).done(data => {
+        *   output
+        *   }).fail(() => {error});
+        */
+
+        const url = "./l5simpledata.json";
+
+        //------------------------------------------Method 1
+
+        // $.ajax(
+        //     {
+        //         method : 'GET',
+        //         url : url,
+        //         dataType : 'json'
+        //     }
+        // ).done(data => {
+        //     console.log(data);
+        // }).fail(() => {
+        //     console.error("ERROR")
+        // });
+
+        //-----------------------------------------Method 2
+
+        // $.ajax({
+        //     method : "GET",
+        //     url : url,
+        //     dataType : 'json',
+        //     success : (getdata)
+        // });
+
+        // function getdata(data,status,xhr){
+        //     console.log(data);
+        //     console.log(status);
+        //     console.log(xhr);
+        // }
+
+        //-----------------------------------------Method 3 (short hand)
+
+        // $.get(url,output);
+
+        // function output(data){
+        //     console.log(data);
+        // }
+
+        //-----------------------------------------Method 4
+
+        // $.getJSON(url,{
+        //     format : 'json', //text
+        // })
+        // .done(data => console.log(data))
+        // .fail(()=> console.error("error"))
+        // .always(function(){
+
+        // });
+
+
+    </script>
+</body>
+
+</html>

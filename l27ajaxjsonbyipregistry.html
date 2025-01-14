@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Request by AJAX - IP Registery </title>
+</head>
+
+<body>
+    <div>
+        <div id="display"></div>
+        <button type="button" id="btn">Click Me</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+
+        const getdisplay = document.getElementById("display");
+        const getbtn = document.getElementById("btn");
+
+        btn.addEventListener('click', function () {
+            loaddata();
+        });
+
+        function loaddata() {
+
+            const key = "ira_6Ep5a9o0Kp9C7jUix5AaJX6hea31C40IBpGM";
+            const uri = `https://api.ipregistry.co?key=${key}`;
+
+            $.getJSON(uri, {
+                format: 'json',
+            }).done(data => {
+                let html = `
+                    <ul>
+                        <li>External Ip = ${data.ip}</li>
+                        <li>Current Device = ${data.user_agent.device.name}</li>
+                        <li>Operation System = ${data.user_agent.os.name}</li>
+                        <li>City = ${data.city}</li>
+                        <li>Local Currency = ${data.currency.name}</li>
+                    </ul>
+                    `;
+
+                getdisplay.innerHTML = html;
+            }).fail(error => {
+                console.log(error);
+            }).always(console.info("Finish"));
+
+        }
+
+
+    </script>
+</body>
+
+</html>
