@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios by local json</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+
+        /*
+        *   axios.get(url)
+        *   .then(callbackfun)
+        *   .catch(err => console.error(err))
+        */
+
+        const url = "./l5simpledata.json";
+
+        // axios.get(url).then((response) => {
+        //     console.log(response);
+        //     console.log(response.data);
+        // }).catch(err => {
+        //     console.error(err);
+        // });
+
+        axios({
+            method: "get",
+            url: url
+        }).then(response => console.log(response.data)
+        ).catch(err => console.error(err));
+
+    </script>
+</body>
+
+</html>
