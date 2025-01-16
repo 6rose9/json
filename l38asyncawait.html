@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Await</title>
+</head>
+
+<body>
+
+    <script>
+
+        function funone() {
+            return "Hello sir, I am funone";
+        }
+
+        console.log(funone());
+
+        //------------------------------------------------------ async
+        async function funtwo() {
+            return "Hello sir, I am funtwo";
+        }
+
+        // console.log(funtwo()); //promise
+
+        console.log("Good Bye Sir");
+
+        // funtwo().then(response => console.log(response));
+
+        async function funthree() {
+
+            const setpromise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve("Hello Earth"), 5000);
+            });
+
+            const response = await setpromise;
+
+            return response;
+        }
+
+        console.log(funthree());
+        funthree().then(response => console.log(response));
+
+        async function funfour() {
+
+            const setpromise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve("Hello Moon"), 5000);
+            });
+
+            const error = false; //is there internet connection like that
+
+            if(!error){
+                const response = await setpromise;
+                return response;
+            }else{
+                await Promise.reject(new Error("Something went wrong !!!"));
+            }
+
+        }
+
+        funfour().then(response => console.info(response)).catch(err => console.error(err));
+
+
+    </script>
+</body>
+
+</html>
